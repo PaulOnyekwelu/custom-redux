@@ -1,12 +1,12 @@
-import { ADDBUG, REMOVEBUG, RESOLVEBUG } from "./constant";
+import { ADDBUG, REMOVEBUG, RESOLVEBUG } from "./constant.js";
 
 const INITIAL_STATE = [];
-const uuid = 0;
+let uuid = 0;
 
-const reducer = (state=INITIAL_STATE, action){
+const reducer = (state=INITIAL_STATE, action) => {
     switch(action.type){
         case ADDBUG: 
-            return [ ...state, { id: ++uuid, description: action.description } ]
+            return [ ...state, { id: ++uuid, description: action.description, resolved: false } ]
         case REMOVEBUG:
             return state.filter(bug => bug.id !== action.id )
         case RESOLVEBUG:

@@ -1,4 +1,4 @@
-import { ADDBUG, REMOVEBUG, RESOLVEBUG } from "./constant";
+import { ADDBUG, REMOVEBUG, RESOLVEBUG } from "./constant.js";
 
 export const addbug = (description) => {
     return {
