@@ -10,3 +10,5 @@ const createStore = (reducer) => {
         return state;
     }
 }
+
+export default createStore();
