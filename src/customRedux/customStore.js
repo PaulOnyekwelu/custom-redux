@@ -1,5 +1,17 @@
 const createStore = (reducer) => {
-    let state; //the state of the store. updated be the reducer function
+    let state; // the state of the store. updated be the reducer function
+    let subs = []; // an array of subscriptions
+
+
+    /**
+     * subscribing to the changes in the state
+     * @param   callback    function to execute on state change
+     * @return  void
+     */
+    const subscribe = (callback) => {
+        subs.push(callback);
+    }
+
 
     /**
      * this returns the current state of the store
@@ -12,14 +24,17 @@ const createStore = (reducer) => {
 
     /**
      * this dispatches action to reducer function
-     * @param   object  action  the action to dispatch
+     * @param   action  the action to dispatch
      * @return  void
      */
     const dispatch = (action) => {
         state = reducer(state, action)
+        for(let sub of subs){
+            sub()
+        }
     }
 
-    return { getState, dispatch }
+    return { getState, dispatch, subscribe }
 
 
 }
