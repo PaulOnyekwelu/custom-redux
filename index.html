@@ -1,12 +1,33 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>subscription to state changes</h1>
-    <div id="root"></div>
-    <script type="module" src="./src/app.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+        <link rel="stylesheet" href="./src/style.css" />
+    </head>
+    <body>
+        <main class="main">
+            <h1 class="heading">state management with custom redux</h1>
+            <section class="add-section">
+                <div class="add-bug">
+                    <input
+                        type="text"
+                        name="description"
+                        id="description"
+                        placeholder="Enter Bug Description"
+                        class="form-input"
+                    />
+                    <button class="add" type="submit">Add Bug</button>
+                </div>
+                <p class="error-desc">Please Enter the Bug description</p>
+            </section>
+
+            <div id="root"></div>
+        </main>
+
+        <script type="module" src="./src/app.js"></script>
+    </body>
 </html>

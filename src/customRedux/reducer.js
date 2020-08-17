@@ -10,7 +10,7 @@ const reducer = (state=INITIAL_STATE, action) => {
         case REMOVEBUG:
             return state.filter(bug => bug.id !== action.id )
         case RESOLVEBUG:
-            return state.map(bug => bug.id === action.id ? {...bug, resolved: true} : bug)
+            return state.map(bug => bug.id === action.id ? {...bug, resolved: !bug.resolved} : bug)
         default:
             return state
     }
